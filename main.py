@@ -2,11 +2,12 @@ import pygame
 import random
 import math
 
-
+'''Initialize the pygame'''
 pygame.init()
 
-
+'''Define the Draw Class'''
 class DrawInformation:
+    '''Initilaize colors'''
     BLACK = 0, 0, 0
     WHITE = 255, 255, 255
     GREEN = 0, 255, 0
@@ -19,7 +20,7 @@ class DrawInformation:
         (160, 160, 160),
         (192, 192, 192)
     ]
-
+    '''Initialize the pygame setting'''
     FONT = pygame.font.SysFont('comicsans', 20)
     LARGE_FONT = pygame.font.SysFont('comicsans', 30)
     SIDE_PAD = 100
@@ -44,6 +45,7 @@ class DrawInformation:
 
 
 def draw(draw_info, algo_name, ascending):
+    '''Define draw function'''
     draw_info.window.fill(draw_info.BACKGROUND_COLOR)
 
     title = draw_info.LARGE_FONT.render(f"{algo_name} - {'Ascending' if ascending else 'Descending'}", 1, draw_info.GREEN)
@@ -58,6 +60,7 @@ def draw(draw_info, algo_name, ascending):
     pygame.display.update()
 
 def draw_list(draw_info, color_positions={}, clear_bg=False):
+    '''Define draw_list function'''
     lst = draw_info.lst
 
     if clear_bg:
@@ -91,6 +94,7 @@ def generate_starting_list(n, min_val, max_val):
 
 
 def bubble_sort(draw_info, ascending=True):
+    '''Define bubble sort function'''
     lst = draw_info.lst
 
     for i in range(len(lst) - 1):
@@ -107,6 +111,7 @@ def bubble_sort(draw_info, ascending=True):
 
 
 def insertion_sort(draw_info, ascending=True):
+    '''Define insertion sort function'''
     lst = draw_info.lst
 
     for i in range(1, len(lst)):
